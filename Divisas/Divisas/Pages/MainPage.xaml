@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Divisas"
+             x:Class="Divisas.MainPage"
+             Title="Convertidor de Divisas"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ScrollView>
+        <StackLayout
+            Padding="8">
+            <Label
+                Text="Pesos:"
+                TextColor="AliceBlue"
+                FontAttributes="Bold">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Pesos}"
+                Keyboard="Numeric"
+                Placeholder="Entre valor en pesos...">
+            </Entry>
+            <Button
+                Command="{Binding ConvertCommand}"
+                BackgroundColor="Navy"
+                TextColor="White"
+                HeightRequest="40"
+                BorderRadius="20"
+                Text="Convertir">
+            </Button>
+            <Label
+                Text="Dólares:"
+                TextColor="Red"
+                FontAttributes="Bold">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Dollars, StringFormat='${0:N2}'}}"
+                IsEnabled="false"
+                Placeholder="Valor en dólares...">
+            </Entry>
+            <Label
+                Text="Libras:"
+                TextColor="Green"
+                FontAttributes="Bold">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Pounds, StringFormat='£{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en libras...">
+            </Entry>
+            <Label
+                Text="Euros:"
+                TextColor="Purple"
+                FontAttributes="Bold">
+            </Label>
+            <Entry
+                HorizontalTextAlignment="End"
+                Text="{Binding Euros, StringFormat='€{0:N2}'}"
+                IsEnabled="false"
+                Placeholder="Valor en euros...">
+            </Entry>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
